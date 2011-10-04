@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Backbone.js Require.js Module Example</title>
+
+	<link rel="stylesheet" href="assets/css/bootstrap-1.2.0.min.css" />
+	<link rel="stylesheet" href="assets/css/styles.css" />
+
+	<script src="assets/js/jquery-1.6.4.min.js"></script>
+	<script src="assets/js/require.js"></script>
+	
+	<script src="assets/js/underscore-min.js"></script>
+	<script src="assets/js/backbone-min.js"></script>
+	
+	<script type="text/javascript">
+		require({
+			urlArgs: 'bust=' + (new Date()).getTime(),
+			baseUrl: '/contact-manager/assets/js/app'
+		}, [
+			'Application'
+		]);
+	</script>
+	
+</head>
+
+<body>
+
+<a href="https://github.com/rricard/backbone-routes-example" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/abad93f42020b733148435e2cd92ce15c542d320/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub"></a>
+
+<div class="container-fluid">
+	<div class="sidebar">
+		<form id="contact-form">
+			<div class="clearfix">
+				<input type="text" id="firstName" placeholder="First Name" class="span2" value="" />
+			</div>
+			<div class="clearfix">
+				<input type="text" id="lastName" placeholder="Last Name" class="span2" value="" />
+			</div>
+			<div class="clearfix">
+				<input type="text" id="email" placeholder="Email" class="span2" value="" />
+			</div>
+			<div>
+				<input type="submit" value="Save" class="btn primary" />
+			</div>
+		</form>
+	</div>
+	<div class="content">
+		<table id="contact-list" class="zebra-striped">
+			<thead>
+				<th>Name</th>
+				<th>Email</th>
+				<th></th>
+			</thead>
+			<!-- contacts -->
+		</table>
+	</div>
+</div>
+
+</body>
+</html>
