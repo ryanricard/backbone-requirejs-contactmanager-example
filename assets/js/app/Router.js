@@ -8,10 +8,6 @@ define(function() {
 			"contact/edit/:id": "contact/edit"
 		},
 
-		initialize: function(){
-
-		},
-
 		"contact/new": function(){
 
 		},

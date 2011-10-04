@@ -18,7 +18,7 @@ require.ready(function(){
 		//call to begin monitoring uri and route changes
 		Backbone.history.start();
 
-		Application.router.navigate('contact/add', true);
+		Application.router.navigate('contact/new', true);
 
 	});
 

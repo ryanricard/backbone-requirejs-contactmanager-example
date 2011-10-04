@@ -25,7 +25,7 @@ define(['model/Contact', 'collections/Contacts'], function(Contact, Contacts) {
 			e.preventDefault();
 
 			Application.router.navigate('contact/save');
-			
+
 			var $form = $(this.el);
 			var id = $form.data('id');
 
@@ -71,8 +71,6 @@ define(['model/Contact', 'collections/Contacts'], function(Contact, Contacts) {
 			$form.find('input#lastName').val(contact.get('lastName'));
 			$form.find('input#email').val(contact.get('email'));
 			$form.find(':input').first().focus();
-
-			Application.router.navigate('contact/edit/' + id, true);
 
 		},
 
