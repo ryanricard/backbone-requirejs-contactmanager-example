@@ -3,16 +3,25 @@ define(function() {
 	var ApplicationRouter = Backbone.Router.extend({
 
 		routes: {
-			"contact/add": "addContact",
-			"contact/edit/:id": "editContact"
+			"contact/new": "contact/new",
+			"contact/save": "contact/save",
+			"contact/edit/:id": "contact/edit"
 		},
 
-		addContact: function(){
+		initialize: function(){
 
 		},
-		
-		editContact: function(){
-		
+
+		"contact/new": function(){
+
+		},
+
+		"contact/save": function(){
+
+		},
+
+		"contact/edit": function(){
+
 		}
 
 	});

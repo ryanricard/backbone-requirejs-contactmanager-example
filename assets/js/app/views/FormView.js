@@ -13,16 +13,18 @@ define(['model/Contact', 'collections/Contacts'], function(Contact, Contacts) {
 
 		initialize: function(){
 
-			_.bindAll(this, 'add', 'edit');
+			_.bindAll(this, 'new', 'edit');
 
-			Application.router.bind('route:addContact', this.add);
-			Application.router.bind('route:editContact', this.edit);
+			Application.router.bind('route:contact/new', this.new);
+			Application.router.bind('route:contact/edit', this.edit);
 
 		},
 
 		save: function(e){
 			
 			e.preventDefault();
+
+			Application.router.navigate('contact/save');
 			
 			var $form = $(this.el);
 			var id = $form.data('id');
@@ -51,8 +53,8 @@ define(['model/Contact', 'collections/Contacts'], function(Contact, Contacts) {
 				$form.data('id', '');
 
 			}
-
-			Application.router.navigate('contact/add', true);
+						
+			Application.router.navigate('contact/new', true);
 
 		},
 
@@ -65,16 +67,16 @@ define(['model/Contact', 'collections/Contacts'], function(Contact, Contacts) {
 			var $form = $(this.el);
 
 			$form.data('id', id);
-			$form.find('input#firstName').val(contact.get('firstName')),
-			$form.find('input#lastName').val(contact.get('lastName')),
-			$form.find('input#email').val(contact.get('email'))
+			$form.find('input#firstName').val(contact.get('firstName'));
+			$form.find('input#lastName').val(contact.get('lastName'));
+			$form.find('input#email').val(contact.get('email'));
 			$form.find(':input').first().focus();
 
 			Application.router.navigate('contact/edit/' + id, true);
 
 		},
 
-		add: function(){
+		new: function(){
 
 			var $form = $(this.el);
 
@@ -91,12 +93,15 @@ define(['model/Contact', 'collections/Contacts'], function(Contact, Contacts) {
 			var $header = $('h4', this.el);
 
 			if(!$header.length){
-				$header = $('<h4/>');
-				$header.html(text);
+
+				$header = $('<h4/>').html(text);
 				$(this.el).prepend($header);
+
 			}
 			else{
+
 				$header.html(text);
+				
 			}
 
 		}

@@ -19,7 +19,9 @@ define(['collections/Contacts', 'views/ListItemView'], function(Contacts, ListIt
 		},
 		
 		addAll: function() {
+
 	      this.collection.each(this.appendItem);
+			
 	    },
 		
 		appendItem: function(contact){

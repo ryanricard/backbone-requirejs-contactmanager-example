@@ -10,10 +10,12 @@ define(function() {
 		},
 		
 		initialize: function(){
+
 			_.bindAll(this, 'render', 'unrender'); // every function that uses 'this' as the current object should be in here
 
 			this.model.bind('change', this.render);
 			this.model.bind('remove', this.unrender);
+			
 	    },
 
 		render: function(){
@@ -32,7 +34,9 @@ define(function() {
 		},
 		
 		unrender: function(){
+
 	      $(this.el).remove();
+
 	    },
 		
 		edit: function(e){
@@ -41,8 +45,10 @@ define(function() {
 
 		},
 		
-		remove: function(e){
+		remove: function(){
+
 			this.model.destroy();
+
 		}
 		
 	});
