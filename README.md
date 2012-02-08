@@ -1,6 +1,6 @@
-##Single page contact manager example using Backbone, RequireJS, and localstorage (<a href="http://code.ryanricard.com/backbone-requirejs-contactmanager-example">Demo</a>).
+####Single page contact manager example using Backbone, RequireJS, and localstorage (<a href="http://code.ryanricard.com/backbone-requirejs-contactmanager-example">Demo</a>).
 
-##Usage:
+#####Usage:
 
 Download code and navigate to index.html in your browser.
 
